@@ -7,16 +7,16 @@ plugins {
 
 android {
     namespace = "com.example.dezikyou"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = 34 // 最新のAPIレベルに更新
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_11 // Java 8から11に更新
         targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = "11" // Kotlin JVMターゲットも更新
     }
 
     defaultConfig {
