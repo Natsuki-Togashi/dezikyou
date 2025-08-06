@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.dezikyou"
-    compileSdk = 34 // 最新のAPIレベルに更新
+    compileSdk = 35 // 34から35に変更
     ndkVersion = "27.0.12077973"
 
     compileOptions {
@@ -24,10 +24,10 @@ android {
         applicationId = "com.example.dezikyou"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        minSdk = 21  // 必要に応じて調整
+        targetSdk = 34  // targetSdkは34のままでOK
+        versionCode = 1
+        versionName = "1.0"
     }
 
     buildTypes {
