@@ -6,6 +6,8 @@ import 'package:geocoding/geocoding.dart';
 import 'save_util.dart';
 import 'save_complete.dart';
 
+//カメラを使った一連の流れを管理するページ
+
 class CameraGpsPage extends StatefulWidget {
   @override
   _CameraGpsPageState createState() => _CameraGpsPageState();

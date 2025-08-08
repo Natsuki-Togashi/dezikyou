@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
+//文字入力を管理
+
 class SaveUtil {
   static Future<void> saveImageFile(File imageFile, String photoName) async {
     final directory = await getApplicationDocumentsDirectory();
