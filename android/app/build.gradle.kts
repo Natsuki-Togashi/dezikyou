@@ -1,22 +1,31 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+    id("com.google.gms.google-services")
+}
+
+dependencies {
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:34.1.0"))
+    // Firebase Analytics（例）
+    implementation("com.google.firebase:firebase-analytics")
+    // 他のFirebaseプロダクトを使う場合はここに追加
 }
 
 android {
     namespace = "com.example.dezikyou"
-    compileSdk = 34 // 最新のAPIレベルに更新
+    // 変更点１：プラグインの要求に合わせて35に更新
+    compileSdk = 35
     ndkVersion = "27.0.12077973"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11 // Java 8から11に更新
+        sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = "11" // Kotlin JVMターゲットも更新
+        jvmTarget = "11"
     }
 
     defaultConfig {
@@ -24,8 +33,9 @@ android {
         applicationId = "com.example.dezikyou"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+    minSdk = 23
+        // 変更点２：こちらも35に更新
+        targetSdk = 35
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }

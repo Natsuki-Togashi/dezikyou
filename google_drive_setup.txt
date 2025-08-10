@@ -1,0 +1,23 @@
+# Google Drive API連携の手順
+
+1. Google Cloud Consoleで新規プロジェクト作成
+2. Google Drive APIを有効化
+3. OAuth2.0クライアントIDを作成し、認証情報(JSON)をダウンロード
+4. Flutterプロジェクトに以下のパッケージを追加
+   - google_sign_in
+   - googleapis
+   - googleapis_auth
+5. 認証フローを実装し、画像ファイルをアップロード
+
+---
+
+## pubspec.yaml への追加例
+
+dependencies:
+  google_sign_in: ^6.1.5
+  googleapis: ^13.1.0
+  googleapis_auth: ^1.4.0
+
+---
+
+Google Cloud Consoleの設定が完了したら、Flutter側の認証・アップロード実装を進めてください。

@@ -12,19 +12,8 @@ import 'package:dezikyou/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(TopPage());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // アプリを起動し、トップ画面タイトル「フォトコンテスト」が表示されていることを確認
+    await tester.pumpWidget(const MyApp());
+    expect(find.text('フォトコンテスト'), findsOneWidget);
   });
 }
