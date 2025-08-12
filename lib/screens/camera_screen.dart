@@ -34,8 +34,11 @@ class _CameraScreenState extends State<CameraScreen> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: CircularProgressIndicator()));
-  }
+    @override
+    Widget build(BuildContext context) {
+      return const Scaffold(
+        backgroundColor: Color(0xFFFFFEE8),
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
 }
