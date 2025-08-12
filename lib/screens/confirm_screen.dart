@@ -137,7 +137,16 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('写真確認')),
+      backgroundColor: const Color(0xFFFFFEE8),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFE6E6D9),
+        title: const Text(
+          '写真確認',
+          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+        ),
+        iconTheme: const IconThemeData(color: Colors.black87),
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -157,9 +166,21 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                   ...gojuon.map(
                     (k) => ElevatedButton(
                       onPressed: uploading ? null : () => _addKana(k),
-                      child: Text(k),
+                      child: Text(
+                        k,
+                        style: const TextStyle(
+                          color: Colors.black87,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(36, 36),
+                        backgroundColor: const Color(0xFFE6E6D9),
+                        foregroundColor: Colors.black87,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
                       ),
                     ),
                   ),
@@ -193,15 +214,56 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton(
-                    onPressed: uploading ? null : _onRetake,
-                    child: const Text('撮り直し'),
+                  SizedBox(
+                    width: 120,
+                    height: 44,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFFE6E6D9),
+                        foregroundColor: Colors.black87,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(22.0),
+                        ),
+                        elevation: 0,
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: uploading ? null : _onRetake,
+                      icon: const Icon(Icons.refresh),
+                      label: const Text(
+                        '撮り直し',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
                   ),
-                  ElevatedButton(
-                    onPressed: (uploading || photoName.isEmpty)
-                        ? null
-                        : _onUpload,
-                    child: const Text('アップロード'),
+                  SizedBox(width: 24),
+                  SizedBox(
+                    width: 120,
+                    height: 44,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFFE6E6D9),
+                        foregroundColor: Colors.black87,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(22.0),
+                        ),
+                        elevation: 0,
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: (uploading || photoName.isEmpty)
+                          ? null
+                          : _onUpload,
+                      icon: const Icon(Icons.cloud_upload),
+                      label: const Text(
+                        'アップロード',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

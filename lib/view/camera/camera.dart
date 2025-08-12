@@ -128,11 +128,7 @@ class _CameraGpsPageState extends State<CameraGpsPage> {
 
   Future<void> _uploadToGoogleDrive(File file) async {
     // Googleサインイン
-    final googleSignIn = GoogleSignIn(
-      scopes: [
-        drive.DriveApi.driveFileScope,
-      ],
-    );
+    final googleSignIn = GoogleSignIn(scopes: [drive.DriveApi.driveFileScope]);
     final account = await googleSignIn.signIn();
     if (account == null) throw 'Googleサインインに失敗しました';
     final authHeaders = await account.authHeaders;
@@ -171,6 +167,7 @@ class _CameraGpsPageState extends State<CameraGpsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFFFFEE8),
       appBar: AppBar(title: Text('写真＋GPS取得')),
       body: Center(
         child: SingleChildScrollView(

@@ -5,6 +5,7 @@ class SaveCompletePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFFFFEE8),
       appBar: AppBar(title: Text('保存完了')),
       body: Center(
         child: Text(

@@ -22,7 +22,8 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => CameraGpsPage(userId: int.parse(_controller.text)),
+          builder: (context) =>
+              CameraGpsPage(userId: int.parse(_controller.text)),
         ),
       );
     } else {
@@ -33,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[200],
+      backgroundColor: const Color(0xFFFFFEE8),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0),
@@ -62,7 +63,10 @@ class _LoginPageState extends State<LoginPage> {
                   errorText: _errorText,
                   filled: true,
                   fillColor: Colors.white,
-                  contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                  contentPadding: EdgeInsets.symmetric(
+                    vertical: 12,
+                    horizontal: 16,
+                  ),
                 ),
               ),
               SizedBox(height: 16),

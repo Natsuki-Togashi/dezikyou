@@ -49,6 +49,7 @@ class _SavedListPageState extends State<SavedListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFFFFEE8),
       appBar: AppBar(title: Text('保存された写真一覧')),
       body: ListView.builder(
         itemCount: savedList.length,
